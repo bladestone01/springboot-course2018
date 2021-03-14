@@ -1,0 +1,16 @@
+
+server:
+  port: 8083
+
+spring:
+  messages:
+    basename: classpath:i18n/message
+    encoding: UTF-8
+  application:
+    name: Spring Yml Demo1
+    admin:
+      enabled: true
+
+
+
+
