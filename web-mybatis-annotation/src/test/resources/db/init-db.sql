@@ -1,0 +1,2 @@
+INSERT INTO `school_info` VALUES (1,'Jackie',123,'2021-03-09 21:02:36','Tony','nero','2021-03-09 21:02:52',1);
+INSERT INTO `school_info` VALUES (2,'Tony',20,'2020-02-09 21:03:34','Tickie','rome','2020-03-09 21:04:50',0);
