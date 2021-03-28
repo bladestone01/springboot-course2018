@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.boot.course.dao.mapper.SchoolInfoXMapper">
+  <resultMap id="myResultMap" type="org.boot.course.dao.po.SimpleSchool">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="student_num" jdbcType="INTEGER" property="studentNum" />
+  </resultMap>
+  
+  <sql id="baseColumnList">
+    id, name, student_num
+  </sql>
+  <select id="selectSimple" resultMap="myResultMap">
+    select
+    <include refid="baseColumnList" />
+    from school_info
+   
+    where name = #{name} and student_num > #{number}
+  </select>
+  
+</mapper>

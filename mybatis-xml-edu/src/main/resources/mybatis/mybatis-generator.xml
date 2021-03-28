@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<context id="MySql" defaultModelType="flat">
+	
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		
+		<!-- 数据库链接URL，用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/shopping?characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai&amp;tinyInt1isBit=false"
+			userId="root" password="root1234">
+		</jdbcConnection>
+
+        <!--  生成模型的包和类名的位置 -->
+        <javaModelGenerator targetPackage="org.boot.course.dao.entity"
+        targetProject="src/main/java"></javaModelGenerator>
+        
+        <!-- 生成XML格式的Mapper映射文件 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources/org/boot/course/dao"></sqlMapGenerator>
+        
+        <!-- 生成DAO的报名和位置 -->
+        <javaClientGenerator targetPackage="org.boot.course.dao.mapper" targetProject="src/main/java" type="XMLMAPPER"></javaClientGenerator>
+        
+        <!-- 表，视图-->
+        <table tableName="school_info">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+	</context>
+	
+</generatorConfiguration>
